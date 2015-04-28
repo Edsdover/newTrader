@@ -1,0 +1,29 @@
+.row
+  .col-xs-6
+    h3 Profile Form
+    form(name='profileInfoForm', novalidate)
+      .form-group
+        label(for='name') Name
+        input.form-control#name(type='text', ng-model='profile.name')
+      .form-group
+        label(for='age') Age
+        input.form-control#age(type='number', ng-model='profile.age')
+      .form-group
+        label(for='gender') Gender
+        select.form-control#gender(ng-model='profile.gender')
+          option Male
+          option Female
+      .form-group
+        label(for='address') Address
+        textarea.form-control#address(type='text', ng-model='profile.address')
+      .form-group
+        label(for='image') Profile Pic Url
+        input.form-control#image(type='url', ng-model='profile.image')
+      button.btn.btn-success(type='submit', ng-click='save(profile)') Save profile
+  .col-xs-6
+    h3 Profile Info
+    p Name: {{profile.name}}
+    img.img-thumbnail.img-responsive(ng-src='{{profile.image}}')
+    p Age: {{profile.age}}
+    p Gender: {{profile.gender}}
+    p Address: {{profile.address}}
